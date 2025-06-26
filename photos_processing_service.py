@@ -1,15 +1,14 @@
-from typing import Any, List, TypedDict, IO
+from typing import List
+from data_structures import ProcessedFileDict
 from werkzeug.datastructures import FileStorage, MultiDict  # type: ignore[import]
 
 
 class PhotosProcessingService:
-    def __init__(self, files: Any):
+    def __init__(self, files: MultiDict[str, FileStorage]):
         self.files: MultiDict[str, FileStorage] = files
         self.processed_files: List[ProcessedFileDict] = []
 
     def __call__(self) -> None:
-        import pdb
-
         for key, files in self.files.lists():
             for file in files:
                 file_dict: ProcessedFileDict = {
@@ -17,8 +16,3 @@ class PhotosProcessingService:
                     "filename": file.filename,
                 }
                 self.processed_files.append(file_dict)
-
-
-class ProcessedFileDict(TypedDict):
-    io: IO
-    filename: str

@@ -1,13 +1,15 @@
 from io import BytesIO
 from zipfile import ZipFile
+from typing import List
+from data_structures import ProcessedFileDict
 
 
 class ZipFilesService:
-    def __init__(self, files_dict):
-        self.files_dict = files_dict
-        self.zip_buffer = BytesIO()
+    def __init__(self, files_dict: List[ProcessedFileDict]):
+        self.files_dict: List[ProcessedFileDict] = files_dict
+        self.zip_buffer: BytesIO = BytesIO()
 
-    def __call__(self):
+    def __call__(self) -> BytesIO:
         with ZipFile(self.zip_buffer, "w") as zip_file:
             for file_dict in self.files_dict:
                 file_dict["io"].seek(0)
