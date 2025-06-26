@@ -1,0 +1,16 @@
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "C90", "PLR0915", "PLR0904"]
+
+# C90: mccabe (complexity)
+# PLR0915: Too many statements (function length)
+# PLR0904: Too many public methods (class length)
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-statements = 10
+max-public-methods = 20
