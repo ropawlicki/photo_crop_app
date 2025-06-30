@@ -1,5 +1,5 @@
 from flask import Flask  # type: ignore[import]
-from routes import main, photos
+from app.routes import main, photos
 
 app = Flask(__name__)
 app.register_blueprint(main)
