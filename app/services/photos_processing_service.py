@@ -1,5 +1,5 @@
 from typing import List
-from data_structures import ProcessedFileDict
+from app.schemas.photos import ProcessedFileDict
 from werkzeug.datastructures import FileStorage, MultiDict  # type: ignore[import]
 
 

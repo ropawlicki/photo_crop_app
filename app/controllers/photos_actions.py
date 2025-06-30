@@ -1,7 +1,7 @@
 from flask import send_file, Response  # type: ignore[import]
 from werkzeug.datastructures import MultiDict, FileStorage  # type: ignore[import]
-from photos_processing_service import PhotosProcessingService
-from zip_files_service import ZipFilesService
+from app.services.photos_processing_service import PhotosProcessingService
+from app.services.zip_files_service import ZipFilesService
 
 
 def crop_photos(files: MultiDict[str, FileStorage]) -> Response:

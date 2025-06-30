@@ -1,7 +1,7 @@
 from io import BytesIO
 from zipfile import ZipFile
 from typing import List
-from data_structures import ProcessedFileDict
+from app.schemas.photos import ProcessedFileDict
 
 
 class ZipFilesService:
