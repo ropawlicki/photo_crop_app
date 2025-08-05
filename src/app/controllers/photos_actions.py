@@ -1,5 +1,5 @@
-from flask import send_file, Response  # type: ignore[import]
-from werkzeug.datastructures import MultiDict, FileStorage  # type: ignore[import]
+from flask import send_file, Response
+from werkzeug.datastructures import MultiDict, FileStorage
 from app.services.photos_processing_service import PhotosProcessingService
 from app.services.zip_files_service import ZipFilesService
 

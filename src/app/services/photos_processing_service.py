@@ -1,6 +1,6 @@
 from typing import List
 from app.schemas.photos import ProcessedFileDict
-from werkzeug.datastructures import FileStorage, MultiDict  # type: ignore[import]
+from werkzeug.datastructures import FileStorage, MultiDict
 
 
 class PhotosProcessingService:

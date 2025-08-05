@@ -1,5 +1,7 @@
-from flask import Blueprint, request  # type: ignore[import]
-from werkzeug.datastructures import MultiDict, FileStorage  # type: ignore[import]
+# mypy: disable-error-code=misc
+
+from flask import Blueprint, request
+from werkzeug.datastructures import MultiDict, FileStorage
 from app.controllers.photos_actions import crop_photos
 
 main = Blueprint("main", __name__, url_prefix="/")
