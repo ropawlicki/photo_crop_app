@@ -13,6 +13,6 @@ class PhotosProcessingService:
             for file in files:
                 file_dict: ProcessedFileDict = {
                     "io": file.stream,
-                    "filename": file.filename,
+                    "filename": file.filename if file.filename is not None else "",
                 }
                 self.processed_files.append(file_dict)
