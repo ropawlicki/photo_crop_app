@@ -14,3 +14,7 @@ max-complexity = 10
 [tool.ruff.lint.pylint]
 max-statements = 10
 max-public-methods = 20
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true

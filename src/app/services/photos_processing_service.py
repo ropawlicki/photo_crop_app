@@ -1,6 +1,6 @@
 from typing import List
 from app.schemas.photos import ProcessedFileDict
-from werkzeug.datastructures import FileStorage, MultiDict  # type: ignore[import]
+from werkzeug.datastructures import FileStorage, MultiDict
 
 
 class PhotosProcessingService:
@@ -13,6 +13,6 @@ class PhotosProcessingService:
             for file in files:
                 file_dict: ProcessedFileDict = {
                     "io": file.stream,
-                    "filename": file.filename,
+                    "filename": file.filename if file.filename is not None else "",
                 }
                 self.processed_files.append(file_dict)

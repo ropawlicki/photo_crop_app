@@ -1,4 +1,3 @@
-from app.controllers.photos_actions import crop_photos
 from app.services.photos_processing_service import PhotosProcessingService
 from tests.factories.file_factory import FileFactory
 from werkzeug.datastructures import MultiDict
