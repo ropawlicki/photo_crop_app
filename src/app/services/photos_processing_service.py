@@ -9,10 +9,10 @@ class PhotosProcessingService:
         self.processed_files: List[ProcessedFileDict] = []
 
     def __call__(self) -> None:
-        for key, files in self.files.lists():  # type: ignore[no-untyped-call]
+        for key, files in self.files.lists():
             for file in files:
                 file_dict: ProcessedFileDict = {
                     "io": file.stream,
-                    "filename": file.filename if file.filename is not None else "",
+                    "filename": file.filename,
                 }
                 self.processed_files.append(file_dict)
