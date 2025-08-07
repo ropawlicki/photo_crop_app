@@ -37,6 +37,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements/requirements.txt
           pip install -r requirements/dev-requirements.txt || true
+      - name: Show mypy config
+        run: |
+          echo "pyproject.toml:" && cat pyproject.toml || true
+          echo "mypy.ini:" && cat mypy.ini || true
+          echo "setup.cfg:" && cat setup.cfg || true
       - name: Run mypy (type check)
         run: mypy src/
 
