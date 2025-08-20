@@ -6,6 +6,8 @@
 #
 blinker==1.9.0
     # via flask
+cffi==1.17.1
+    # via pyvips
 click==8.2.1
     # via flask
 factory-boy==3.3.3
@@ -39,8 +41,12 @@ packaging==25.0
     #   pytest-factoryboy
 pathspec==0.12.1
     # via mypy
+pkgconfig==1.5.5
+    # via pyvips
 pluggy==1.6.0
     # via pytest
+pycparser==2.22
+    # via cffi
 pygments==2.19.2
     # via pytest
 pytest==8.4.1
@@ -52,6 +58,8 @@ pytest-factoryboy==2.8.1
     # via -r requirements/dev-requirements.in
 pytest-mock==3.14.1
     # via -r requirements/dev-requirements.in
+pyvips==2.2.3
+    # via -r /home/robert/apps/photo_crop_app/requirements/requirements.in
 ruff==0.12.1
     # via -r requirements/dev-requirements.in
 typing-extensions==4.14.0
