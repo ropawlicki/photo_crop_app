@@ -54,6 +54,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements/requirements.txt
           pip install -r requirements/dev-requirements.txt || true
+      - name: Install libvips
+        run: sudo apt-get update && sudo apt-get install -y libvips
       - name: Run tests
         env:
           PYTHONPATH: src
