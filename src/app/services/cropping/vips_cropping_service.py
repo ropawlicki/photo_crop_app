@@ -33,10 +33,7 @@ class VipsCroppingService(CroppingService):
         new_width = int(self.image.width * scale)
         new_height = int(self.image.height * scale)
 
-        left = (self.image.width - new_width) // 2
-        top = (self.image.height - new_height) // 2
-
-        self._cropped_image = self.image.crop(left, top, new_width, new_height)
+        self._cropped_image = self.image.smartcrop(new_width, new_height)
         return self._cropped_image
 
     def _convert_image_to_stream(self) -> IO[bytes]:
